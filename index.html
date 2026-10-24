@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#ffffff">
+<title>文京区 あなたの名所ものがたり</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css">
+<link rel="stylesheet" href="./assets/style.css">
+</head>
+<body>
+<div class="app-container">
+  <aside id="sidebar">
+    <div class="controls">
+      <h1 id="site-title">文京区<br>あなたの名所ものがたり</h1>
+
+      <div class="filter-section collapsed" data-target="year-filter-list">
+        <h3 class="filter-section-head">
+          <span>年度</span>
+          <span class="section-arrow">▾</span>
+        </h3>
+        <div class="filter-actions">
+          <button type="button" class="filter-all-btn" data-group="year" data-action="all">全選択</button>
+          <button type="button" class="filter-all-btn" data-group="year" data-action="none">全解除</button>
+        </div>
+        <div id="year-filter-list" class="filter-chip-list"></div>
+      </div>
+
+      <div class="filter-section collapsed" data-target="theme-filter-list">
+        <h3 class="filter-section-head">
+          <span>テーマ</span>
+          <span class="section-arrow">▾</span>
+        </h3>
+        <div class="filter-actions">
+          <button type="button" class="filter-all-btn" data-group="theme" data-action="all">全選択</button>
+          <button type="button" class="filter-all-btn" data-group="theme" data-action="none">全解除</button>
+        </div>
+        <div id="theme-filter-list" class="filter-chip-list"></div>
+      </div>
+
+      <p class="result-count">該当件数：<span id="count">0</span>件</p>
+    </div>
+
+    <div id="data-list"></div>
+  </aside>
+
+  <div id="map"></div>
+</div>
+
+<div id="image-modal" class="modal hidden">
+  <div class="image-modal-content">
+    <span class="close-btn" id="image-modal-close">&times;</span>
+    <img id="enlarged-image" src="" alt="拡大画像">
+  </div>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+<script src="./assets/script.js"></script>
+</body>
+</html>
